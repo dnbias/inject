@@ -5,7 +5,8 @@ import urllib.request as urlr
 
 def send_request(params, url):
     query = urlp.urlencode(params)
-    url = url + "?" + query
+
+    url = url + "?u=" + params["u"]
 
     # print(url)
     with urlr.urlopen(url) as response:
