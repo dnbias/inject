@@ -12,7 +12,7 @@ def send_request(params, url):
 
 
 def inject_bypass(user):
-    return user + "\" --"
+    return user + "\" OR 1 == 1 --"
 
 
 usernames = {
