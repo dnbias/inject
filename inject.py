@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 
 import urllib.parse as urlp
 import urllib.request as urlr
