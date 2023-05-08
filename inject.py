@@ -51,6 +51,7 @@ url = "http://localhost/lab09/login.php"
 for username in usernames:
     print(username)
     username = inject_bypass(username)
+    print("input: " + username)
 
     params = {
         "u": username,
@@ -63,4 +64,4 @@ for username in usernames:
     else:
         print("/thit!")
 
-    print(/n/n)
+    print("/n/n")
