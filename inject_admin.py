@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import ./inject.py
+import inject
 
 user = "admin"
 
-user = inject_bypass(user)
+user = inject.inject_bypass(user)
 
 params = {
     "u": user,
@@ -13,7 +13,7 @@ params = {
 
 url = "http://localhost/lab09/login.php"
 
-(response, url_par) = send_request(params, url)
+(response, url_par) = inject.send_request(params, url)
 
 print(url_par)
 print(response)
