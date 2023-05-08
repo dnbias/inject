@@ -47,7 +47,9 @@ usernames = {
 
 url = "http://localhost/lab09/login.php"
 
+i=1
 for username in usernames:
+    print(i++)
     # print(username + "...")
     username = inject_bypass(username)
     # print(username)
