@@ -63,4 +63,5 @@ for username in usernames:
 
     if(not("invalid" in response.decode('utf-8'))):
         print(username + " -- hit!")
+        print(url)
         print(response)
