@@ -7,6 +7,7 @@ def send_request(params, url):
     query = urlp.urlencode(params)
     url = url + "?" + query
 
+    print(url)
     with urlr.urlopen(url) as response:
         return response.read(400)
 
@@ -60,6 +61,4 @@ for username in usernames:
     response = send_request(params, url)
 
     if(not("invalid" in response.decode('utf-8'))):
-        print("\n")
-        print("\thit!")
-        print("\n")
+        print(username + " -- hit!")
