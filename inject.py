@@ -8,7 +8,7 @@ def send_request(params, url):
 
     url = url + "?u=" + params["u"]
 
-    # print(url)
+    print(url)
     with urlr.urlopen(url) as response:
         return (response.read(400), url)
 
