@@ -47,10 +47,7 @@ usernames = {
 
 url = "http://localhost/lab09/login.php"
 
-i = 1
 for username in usernames:
-    print(i)
-    i = i + 1
     # print(username + "...")
     username = inject_bypass(username)
     # print(username)
@@ -60,10 +57,7 @@ for username in usernames:
         "p": ""
     }
 
-    print()
     response = send_request(params, url)
-
-    print(response)
 
     if(not("invalid" in response.decode('utf-8'))):
         print("\n")
