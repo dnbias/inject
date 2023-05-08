@@ -50,5 +50,5 @@ query = urlp.urlencode(params)
 url = url + "?" + query
 
 with urlr.urlopen(url) as response:
-    response_text = response.read
+    response_text = response.read(100)
     print(response_text)
