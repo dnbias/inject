@@ -9,7 +9,7 @@ def send_request(params, url):
 
     # print(url)
     with urlr.urlopen(url) as response:
-        return response.read(400)
+        return (response.read(400), url)
 
 
 def inject_bypass(user):
@@ -59,9 +59,9 @@ for username in usernames:
         "p": ""
     }
 
-    response = send_request(params, url)
+    (response, url_par) = send_request(params, url)
 
     if(not("invalid" in response.decode('utf-8'))):
         print(username + " -- hit!")
-        print(url)
+        print(url_par)
         print(response)
