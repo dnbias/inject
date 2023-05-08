@@ -59,7 +59,7 @@ for username in usernames:
 
     response = send_request(params, url)
     print(response)
-    if(!("invalid" in response.decode('utf-8'))):
+    if(not("invalid" in response.decode('utf-8'))):
         print("\n")
         print("\thit!")
         print("\n")
